@@ -1,0 +1,2 @@
+${S32_SDK_PATH}/Sources/Ax_driver/uart_com/config/
+${S32_SDK_PATH}/Sources/Ax_driver/uart_com/static/if/
