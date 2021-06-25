@@ -5,12 +5,13 @@
  *      Author: AlexeiAROBS
  */
 
+/* Includes */
+#include "com/uart/config/src/uartCfg.h"
+#include "lpuart1.h"
 /* Local variables */
 
-
-#include "com/uart/static/if/uart_types.h"
-
-const uart_interfaces UARTuart_interfaces;
+uart_interfaces uart_interfacesCfg;
+uartConfigType uart_ConfigurationCfg;
 
 statusType UART_InitInterfaceCfg(const uart_instanceType instance, uartConfigType * uartConfig)
 {
@@ -128,7 +129,8 @@ statusType UART_GetBaudRateInterfaceCfg(const uart_instanceType instance, uart_b
 
 	return retStatus;
 }
-const uart_interfaces UARTuart_interfaces =
+
+uart_interfaces uart_interfacesCfg =
 {
 		.init = UART_InitInterfaceCfg,
 		.deinit = UART_DeinitInterfaceCfg,
@@ -142,5 +144,16 @@ const uart_interfaces UARTuart_interfaces =
 		.receiveDataAsynchrone = UART_ReceiveDataAsynchroneInterfaceCfg,
 		.getReceiveStatus = UART_GetReceiveStatusInterfaceCfg,
 		.setBaudRate = UART_SetBaudRateInterfaceCfg,
-		.getBaudRate = UART_GetBaudRateInterfaceCfg
+		.getBaudRate = UART_GetBaudRateInterfaceCfg,
 };
+
+
+uartConfigType uart_ConfigurationCfg =
+{
+		.lpuartStatePtr = &lpuart1_State,
+		.lpuartUserConfig = &lpuart1_InitConfig0
+
+};
+
+uart_interfaces* UART_interfacesCfg = &uart_interfacesCfg;
+uartConfigType* UART_ConfigurationCfg = &uart_ConfigurationCfg;

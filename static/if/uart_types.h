@@ -8,8 +8,8 @@
 #ifndef AX_UART_TYPES_H_
 #define AX_UART_TYPES_H_
 
+#include <com/uart/config/src/uartDefsCfg.h>
 #include "general/static/if/general.h"
-#include "com/uart/config/src/uart_cfg.h"
 
 typedef uart_instanceDefType uart_instanceType;
 typedef uart_baudRateDefType uart_baudRateType;
