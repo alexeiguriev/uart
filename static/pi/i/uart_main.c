@@ -108,7 +108,7 @@ statusType UART_Deinit(const uart_instanceType instance)
 	return retStatus;
 }
 
-statusType UART_InstallRxCallback(const uart_instanceType instance, uart_callbackType function, const void * callbackParam)
+statusType UART_InstallRxCallback(const uart_instanceType instance, uart_callbackType function, void * callbackParam)
 {
 	statusType retStatus = AX_STATUS_SUCCESS;
 	if(uartInterfaces->init != NULL)
@@ -122,7 +122,7 @@ statusType UART_InstallRxCallback(const uart_instanceType instance, uart_callbac
 	return retStatus;
 }
 
-statusType UART_InstallTxCallback(const uart_instanceType instance, uart_callbackType function, const void * callbackParam)
+statusType UART_InstallTxCallback(const uart_instanceType instance, uart_callbackType function, void * callbackParam)
 {
 	statusType retStatus = AX_STATUS_SUCCESS;
 	if(uartInterfaces->init != NULL)
@@ -164,7 +164,7 @@ statusType UART_SendDataAsynchrone(const uart_instanceType instance,const uint8_
 	return retStatus;
 }
 
-statusType UART_GetTransmitStatus(const uart_instanceType instance, const uint32_t * bytesRemaining)
+statusType UART_GetTransmitStatus(const uart_instanceType instance, uint32_t * bytesRemaining)
 {
 	statusType retStatus = AX_STATUS_SUCCESS;
 	if(uartInterfaces->init != NULL)
@@ -192,7 +192,7 @@ statusType UART_AbortSendingData(const uart_instanceType instance)
 	return retStatus;
 }
 
-statusType UART_ReceiveDataBlocking(const uart_instanceType instance, const uart_dataType * rxBuff, const uint32_t rxSize,const uint32_t timeout)
+statusType UART_ReceiveDataBlocking(const uart_instanceType instance, uart_dataType * rxBuff, const uint32_t rxSize,const uint32_t timeout)
 {
 	statusType retStatus = AX_STATUS_SUCCESS;
 	if(uartInterfaces->init != NULL)
@@ -206,7 +206,7 @@ statusType UART_ReceiveDataBlocking(const uart_instanceType instance, const uart
 	return retStatus;
 }
 
-statusType UART_ReceiveDataAsynchrone(const uart_instanceType instance, const uart_dataType * rxBuff, const uint32_t rxSize)
+statusType UART_ReceiveDataAsynchrone(const uart_instanceType instance, uart_dataType * rxBuff, const uint32_t rxSize)
 {
 	statusType retStatus = AX_STATUS_SUCCESS;
 	if(uartInterfaces->init != NULL)
@@ -220,7 +220,7 @@ statusType UART_ReceiveDataAsynchrone(const uart_instanceType instance, const ua
 	return retStatus;
 }
 
-statusType UART_GetReceiveStatus(const uart_instanceType instance, const uint32_t * bytesRemaining)
+statusType UART_GetReceiveStatus(const uart_instanceType instance, uint32_t * bytesRemaining)
 {
 	statusType retStatus = AX_STATUS_SUCCESS;
 	if(uartInterfaces->init != NULL)
