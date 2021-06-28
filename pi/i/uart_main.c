@@ -5,8 +5,8 @@
  *      Author: AlexeiAROBS
  */
 /* include */
-#include "com/uart/static/if/uart.h"
-#include "com/uart/config/src/uartCfg.h"
+#include "com/static/uart/if/uart.h"
+#include "com/config/uart_cnf/src/uartCnf.h"
 
 /* local variables */
 
@@ -251,7 +251,7 @@ statusType UART_SetBaudRate(const uart_instanceType instance, const uart_baudRat
 	return retStatus;
 }
 
-statusType UART_GetBaudRate(const uart_instanceType instance, const uart_baudRateType* desiredBaudRate)
+statusType UART_GetBaudRate(const uart_instanceType instance, uart_baudRateType* desiredBaudRate)
 {
 	statusType retStatus = AX_STATUS_SUCCESS;
 

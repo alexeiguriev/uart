@@ -8,8 +8,8 @@
 #ifndef AX_UART_TYPES_H_
 #define AX_UART_TYPES_H_
 
-#include <com/uart/config/src/uartDefsCfg.h>
-#include "general/static/if/general.h"
+#include <com/config/uart_cnf/src/uartDefsCnf.h>
+#include "abstr/static/general/if/general.h"
 
 typedef uart_instanceDefType uart_instanceType;
 typedef uart_baudRateDefType uart_baudRateType;
@@ -38,7 +38,7 @@ typedef struct
 	statusType (*receiveDataAsynchrone)(const uart_instanceType instance, uart_dataType * rxBuff, const uint32_t rxSize);
 	statusType (*getReceiveStatus)(const uart_instanceType instance, uint32_t * bytesRemaining);
 	statusType (*setBaudRate)(const uart_instanceType instance, const uart_baudRateType desiredBaudRate);
-	statusType (*getBaudRate)(const uart_instanceType instance, const uart_baudRateType* desiredBaudRate);
+	statusType (*getBaudRate)(const uart_instanceType instance, uart_baudRateType* desiredBaudRate);
 }uart_interfaces;
 
 

@@ -36,7 +36,7 @@ statusType UART_GetReceiveStatus(const uart_instanceType instance, uint32_t * by
 
 statusType UART_SetBaudRate(const uart_instanceType instance, const uart_baudRateType desiredBaudRate);
 
-statusType UART_GetBaudRate(const uart_instanceType instance, const uart_baudRateType* desiredBaudRate);
+statusType UART_GetBaudRate(const uart_instanceType instance, uart_baudRateType* desiredBaudRate);
 
 
 #endif /* AX_UART_H_ */
